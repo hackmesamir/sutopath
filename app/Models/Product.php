@@ -167,6 +167,55 @@ class Product extends Model
     }
 
     /**
+     * Get all images for the product.
+     */
+    public function images(): HasMany
+    {
+        return $this->hasMany(ProductImage::class)->ordered();
+    }
+
+    /**
+     * Get the primary image for the product.
+     */
+    public function primaryImage()
+    {
+        return $this->hasOne(ProductImage::class)->where('is_primary', true);
+    }
+
+    /**
+     * Get the main image URL (primary image or first image).
+     *
+     * @return string|null
+     */
+    public function getMainImageAttribute(): ?string
+    {
+        $primaryImage = $this->images()->where('is_primary', true)->first();
+        if ($primaryImage) {
+            return $primaryImage->url;
+        }
+        
+        $firstImage = $this->images()->first();
+        if ($firstImage) {
+            return $firstImage->url;
+        }
+        
+        // Fallback to product image field
+        return $this->image ? asset('storage/' . $this->image) : null;
+    }
+
+    /**
+     * Get all image URLs.
+     *
+     * @return array
+     */
+    public function getImageUrlsAttribute(): array
+    {
+        return $this->images()->active()->ordered()->get()->map(function ($image) {
+            return $image->url;
+        })->toArray();
+    }
+
+    /**
      * Get the current price (sale price if available, otherwise regular price).
      *
      * @return float
