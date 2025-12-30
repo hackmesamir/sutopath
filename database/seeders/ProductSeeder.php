@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,6 +14,17 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
+        // Get categories for foreign keys
+        $womensWear = Category::where('slug', 'womens-wear')->first();
+        $mensWear = Category::where('slug', 'mens-wear')->first();
+        $kidsWear = Category::where('slug', 'kids-wear')->first();
+        $accessories = Category::where('slug', 'accessories')->first();
+        
+        $punjabiSuits = Category::where('slug', 'punjabi-suits')->first();
+        $patialaSuits = Category::where('slug', 'patiala-suits')->first();
+        $kurtaPajama = Category::where('slug', 'kurta-pajama')->first();
+        $dupattas = Category::where('slug', 'dupattas')->first();
+        
         $products = [
             [
                 'name' => 'Traditional Punjabi Suit',
@@ -24,24 +36,16 @@ class ProductSeeder extends Seeder
                 'sale_price' => 1999.00,
                 'cost_price' => 1200.00,
                 'image' => '/images/products/punjabi-suit-1.jpg',
-                'gallery' => [
+                'gallery' => json_encode([
                     '/images/products/punjabi-suit-1-1.jpg',
                     '/images/products/punjabi-suit-1-2.jpg',
-                ],
+                ]),
                 'stock_quantity' => 50,
                 'stock_status' => 'in_stock',
                 'manage_stock' => true,
                 'low_stock_threshold' => 10,
-                'category' => "Women's Wear",
-                'subcategory' => 'Punjabi Suits',
-                'brand' => 'Ecomarc',
-                'sizes' => ['S', 'M', 'L', 'XL', 'XXL'],
-                'colors' => ['Red', 'Blue', 'Green', 'Pink', 'Yellow'],
-                'attributes' => [
-                    'material' => 'Cotton',
-                    'pattern' => 'Embroidered',
-                    'occasion' => 'Wedding, Festival',
-                ],
+                'category_id' => $womensWear?->id,
+                'subcategory_id' => $punjabiSuits?->id,
                 'weight' => 0.5,
                 'status' => 'published',
                 'featured' => true,
@@ -62,24 +66,16 @@ class ProductSeeder extends Seeder
                 'sale_price' => null,
                 'cost_price' => 2000.00,
                 'image' => '/images/products/patiala-suit-1.jpg',
-                'gallery' => [
+                'gallery' => json_encode([
                     '/images/products/patiala-suit-1-1.jpg',
                     '/images/products/patiala-suit-1-2.jpg',
-                ],
+                ]),
                 'stock_quantity' => 30,
                 'stock_status' => 'in_stock',
                 'manage_stock' => true,
                 'low_stock_threshold' => 10,
-                'category' => "Women's Wear",
-                'subcategory' => 'Patiala Suits',
-                'brand' => 'Ecomarc',
-                'sizes' => ['S', 'M', 'L', 'XL'],
-                'colors' => ['Navy Blue', 'Maroon', 'Purple', 'Black'],
-                'attributes' => [
-                    'material' => 'Georgette',
-                    'pattern' => 'Printed',
-                    'occasion' => 'Casual, Party',
-                ],
+                'category_id' => $womensWear?->id,
+                'subcategory_id' => $patialaSuits?->id,
                 'weight' => 0.6,
                 'status' => 'published',
                 'featured' => true,
@@ -100,23 +96,15 @@ class ProductSeeder extends Seeder
                 'sale_price' => 699.00,
                 'cost_price' => 400.00,
                 'image' => '/images/products/dupatta-1.jpg',
-                'gallery' => [
+                'gallery' => json_encode([
                     '/images/products/dupatta-1-1.jpg',
-                ],
+                ]),
                 'stock_quantity' => 100,
                 'stock_status' => 'in_stock',
                 'manage_stock' => true,
                 'low_stock_threshold' => 20,
-                'category' => 'Accessories',
-                'subcategory' => 'Dupattas',
-                'brand' => 'Ecomarc',
-                'sizes' => ['One Size'],
-                'colors' => ['Red', 'Blue', 'Green', 'Pink', 'Yellow', 'Orange'],
-                'attributes' => [
-                    'material' => 'Chiffon',
-                    'pattern' => 'Embroidered',
-                    'length' => '2.5 meters',
-                ],
+                'category_id' => $accessories?->id,
+                'subcategory_id' => $dupattas?->id,
                 'weight' => 0.2,
                 'status' => 'published',
                 'featured' => false,
@@ -137,24 +125,16 @@ class ProductSeeder extends Seeder
                 'sale_price' => null,
                 'cost_price' => 1000.00,
                 'image' => '/images/products/kurta-pajama-1.jpg',
-                'gallery' => [
+                'gallery' => json_encode([
                     '/images/products/kurta-pajama-1-1.jpg',
                     '/images/products/kurta-pajama-1-2.jpg',
-                ],
+                ]),
                 'stock_quantity' => 40,
                 'stock_status' => 'in_stock',
                 'manage_stock' => true,
                 'low_stock_threshold' => 10,
-                'category' => "Men's Wear",
-                'subcategory' => 'Kurta Pajama',
-                'brand' => 'Ecomarc',
-                'sizes' => ['S', 'M', 'L', 'XL', 'XXL'],
-                'colors' => ['White', 'Beige', 'Light Blue', 'Grey'],
-                'attributes' => [
-                    'material' => 'Cotton',
-                    'pattern' => 'Solid',
-                    'occasion' => 'Casual, Formal',
-                ],
+                'category_id' => $mensWear?->id,
+                'subcategory_id' => $kurtaPajama?->id,
                 'weight' => 0.7,
                 'status' => 'published',
                 'featured' => true,
@@ -175,23 +155,15 @@ class ProductSeeder extends Seeder
                 'sale_price' => 999.00,
                 'cost_price' => 600.00,
                 'image' => '/images/products/kids-suit-1.jpg',
-                'gallery' => [
+                'gallery' => json_encode([
                     '/images/products/kids-suit-1-1.jpg',
-                ],
+                ]),
                 'stock_quantity' => 25,
                 'stock_status' => 'in_stock',
                 'manage_stock' => true,
                 'low_stock_threshold' => 5,
-                'category' => "Kids Wear",
-                'subcategory' => 'Punjabi Suits',
-                'brand' => 'Ecomarc',
-                'sizes' => ['2-3 Years', '4-5 Years', '6-7 Years', '8-9 Years'],
-                'colors' => ['Pink', 'Blue', 'Red', 'Yellow'],
-                'attributes' => [
-                    'material' => 'Cotton',
-                    'pattern' => 'Printed',
-                    'age_group' => '2-9 Years',
-                ],
+                'category_id' => $kidsWear?->id,
+                'subcategory_id' => $punjabiSuits?->id,
                 'weight' => 0.3,
                 'status' => 'published',
                 'featured' => false,

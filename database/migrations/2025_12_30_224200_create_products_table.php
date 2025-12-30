@@ -35,14 +35,9 @@ return new class extends Migration
             $table->enum('stock_status', ['in_stock', 'out_of_stock', 'on_backorder'])->default('in_stock');
             $table->boolean('manage_stock')->default(true);
             $table->integer('low_stock_threshold')->default(10);
-            
-            // Product Attributes
-            $table->string('category')->nullable();
-            $table->string('subcategory')->nullable();
-            $table->string('brand')->nullable();
-            $table->json('sizes')->nullable(); // Available sizes
-            $table->json('colors')->nullable(); // Available colors
-            $table->json('attributes')->nullable(); // Additional attributes (material, pattern, etc.)
+
+            $table->foreignId('category_id')->nullable()->constrained('categories')->onDelete('set null');
+            $table->foreignId('subcategory_id')->nullable()->constrained('categories')->onDelete('set null');
             
             // Dimensions & Weight
             $table->decimal('weight', 8, 2)->nullable();

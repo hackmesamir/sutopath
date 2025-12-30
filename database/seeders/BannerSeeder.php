@@ -30,10 +30,10 @@ class BannerSeeder extends Seeder
                 'open_in_new_tab' => false,
                 'sort_order' => 1,
                 'alt_text' => 'Welcome to Ecomarc Punjabi Shop',
-                'settings' => [
+                'settings' => json_encode([
                     'text_color' => '#FFFFFF',
                     'button_color' => '#F97316',
-                ],
+                ]),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -53,10 +53,10 @@ class BannerSeeder extends Seeder
                 'open_in_new_tab' => false,
                 'sort_order' => 2,
                 'alt_text' => 'New Collection 2024',
-                'settings' => [
+                'settings' => json_encode([
                     'text_color' => '#FFFFFF',
                     'button_color' => '#16A34A',
-                ],
+                ]),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -76,10 +76,10 @@ class BannerSeeder extends Seeder
                 'open_in_new_tab' => false,
                 'sort_order' => 3,
                 'alt_text' => 'Special Offer - Up to 30% Off',
-                'settings' => [
+                'settings' => json_encode([
                     'text_color' => '#FFFFFF',
                     'button_color' => '#DC2626',
-                ],
+                ]),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

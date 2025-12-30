@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('order_id')->constrained()->onDelete('cascade');
             $table->foreignId('product_id')->nullable()->constrained()->onDelete('set null');
+            $table->foreignId('product_variant_id')->nullable()->constrained()->onDelete('set null');
             
             // Product Information (snapshot at time of order)
             $table->string('product_name');
