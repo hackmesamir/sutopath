@@ -21,5 +21,16 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        // Seed settings, admins, categories, sizes, colors, shipping charges, and products
+        $this->call([
+            SettingsSeeder::class,
+            AdminSeeder::class,
+            CategorySeeder::class,
+            SizeSeeder::class,
+            ColorSeeder::class,
+            ShippingChargeSeeder::class,
+            ProductSeeder::class,
+        ]);
     }
 }
