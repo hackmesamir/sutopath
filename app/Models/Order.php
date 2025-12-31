@@ -15,7 +15,7 @@ class Order extends Model
      */
     protected $fillable = [
         'order_number',
-        'user_id',
+        'customer_id',
         'customer_name',
         'customer_email',
         'customer_phone',
@@ -39,7 +39,7 @@ class Order extends Model
         'payment_method',
         'payment_status',
         'transaction_id',
-        'status',
+        'order_status',
         'tracking_number',
         'shipped_at',
         'delivered_at',
@@ -94,11 +94,11 @@ class Order extends Model
     }
 
     /**
-     * Get the user that owns the order.
+     * Get the customer that owns the order.
      */
-    public function user(): BelongsTo
+    public function customer(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Customer::class);
     }
 
     /**
@@ -118,6 +118,14 @@ class Order extends Model
     }
 
     /**
+     * Get the shipping address for the order.
+     */
+    public function shippingAddress(): BelongsTo
+    {
+        return $this->belongsTo(Shipping::class, 'id', 'order_id');
+    }
+
+    /**
      * Check if order is paid.
      *
      * @return bool
@@ -134,7 +142,7 @@ class Order extends Model
      */
     public function isPending(): bool
     {
-        return $this->status === 'pending';
+        return $this->order_status === 'pending';
     }
 
     /**
@@ -144,7 +152,7 @@ class Order extends Model
      */
     public function isDelivered(): bool
     {
-        return $this->status === 'delivered';
+        return $this->order_status === 'delivered';
     }
 
     /**
@@ -154,7 +162,7 @@ class Order extends Model
      */
     public function isCancelled(): bool
     {
-        return $this->status === 'cancelled';
+        return $this->order_status === 'cancelled';
     }
 
     /**
@@ -162,7 +170,7 @@ class Order extends Model
      */
     public function scopePending($query)
     {
-        return $query->where('status', 'pending');
+        return $query->where('order_status', 'pending');
     }
 
     /**
@@ -178,6 +186,6 @@ class Order extends Model
      */
     public function scopeDelivered($query)
     {
-        return $query->where('status', 'delivered');
+        return $query->where('order_status', 'delivered');
     }
 }

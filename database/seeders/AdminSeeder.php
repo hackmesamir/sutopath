@@ -17,8 +17,8 @@ class AdminSeeder extends Seeder
         $admins = [
             [
                 'name' => 'Super Admin',
-                'email' => 'admin@ecomarcpunjabi.com',
-                'password' => Hash::make('password123'),
+                'email' => 'admin@gmail.com',
+                'password' => Hash::make('12345678'),
                 'phone' => '+91 9876543210',
                 'status' => 'active',
                 'email_verified_at' => now(),
@@ -27,24 +27,15 @@ class AdminSeeder extends Seeder
             ],
             [
                 'name' => 'Admin User',
-                'email' => 'admin2@ecomarcpunjabi.com',
-                'password' => Hash::make('password123'),
+                'email' => 'admin2@gmail.com',
+                'password' => Hash::make('12345678'),
                 'phone' => '+91 9876543211',
                 'status' => 'active',
                 'email_verified_at' => now(),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            [
-                'name' => 'Manager',
-                'email' => 'manager@ecomarcpunjabi.com',
-                'password' => Hash::make('password123'),
-                'phone' => '+91 9876543212',
-                'status' => 'active',
-                'email_verified_at' => now(),
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
+          
         ];
 
         Admin::insert($admins);

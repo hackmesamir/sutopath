@@ -3,32 +3,82 @@
 @section('title', 'Home - Ecomarc Punjabi Shop')
 
 @section('content')
-    <!-- Hero Section -->
-    <section class="position-relative text-white overflow-hidden" style="background: linear-gradient(to right, #f97316, #ea580c, #16a34a); padding: 100px 0;">
-        <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-25"></div>
-        <div class="container position-relative" style="z-index: 10;">
-            <div class="text-center py-5">
-                <h1 class="display-3 fw-bold mb-4 animate-fade-in">
-                    Welcome to Ecomarc Punjabi Shop
-                </h1>
-                <p class="lead mb-4" style="color: #fed7aa;">
-                    Discover Authentic Punjabi Products - Quality, Tradition, and Excellence
-                </p>
-                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-                    <a href="#products" class="btn btn-light btn-lg px-5 py-3 fw-semibold shadow">
-                        Shop Now
-                    </a>
-                    <a href="#about" class="btn btn-outline-light btn-lg px-5 py-3 fw-semibold">
-                        Learn More
-                    </a>
+    <!-- Hero Banner Slider -->
+    <section class="hero-slider position-relative">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active position-relative">
+                    <div class="hero-slide" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600') center/cover; min-height: 600px; display: flex; align-items: center;">
+                        <div class="container position-relative" style="z-index: 2;">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6">
+                                    <div class="text-white">
+                                        <h1 class="display-3 fw-bold mb-4" style="line-height: 1.2;">WARMTH WITHOUT THE WEIGHT</h1>
+                                        <p class="lead mb-4">YOUR EVERYDAY WINTER LAYER</p>
+                                        <a href="#products" class="btn btn-light btn-lg px-5 py-3 fw-semibold">
+                                            SHOP NOW
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="text-white text-lg-end">
+                                        <h2 class="display-4 fw-bold mb-3">WINTER →ESSENTIALS</h2>
+                                        <p class="lead">The Winter Edit: modern fits, breathable warmth, and versatile style. Layer up and go anywhere.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item position-relative">
+                    <div class="hero-slide" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=1600') center/cover; min-height: 600px; display: flex; align-items: center;">
+                        <div class="container position-relative" style="z-index: 2;">
+                            <div class="row align-items-center">
+                                <div class="col-lg-8 mx-auto text-center text-white">
+                                    <h1 class="display-3 fw-bold mb-4">Discover Authentic Punjabi</h1>
+                                    <p class="lead mb-4">Quality, Tradition, and Excellence in Every Product</p>
+                                    <a href="#categories" class="btn btn-light btn-lg px-5 py-3 fw-semibold">
+                                        Explore Collection
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item position-relative">
+                    <div class="hero-slide" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1600') center/cover; min-height: 600px; display: flex; align-items: center;">
+                        <div class="container position-relative" style="z-index: 2;">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6">
+                                    <div class="text-white">
+                                        <h1 class="display-3 fw-bold mb-4">Premium Quality</h1>
+                                        <p class="lead mb-4">Handcrafted with care, designed for comfort</p>
+                                        <a href="#products" class="btn btn-light btn-lg px-5 py-3 fw-semibold">
+                                            Shop Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Decorative Pattern -->
-        <div class="position-absolute bottom-0 start-0 w-100">
-            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
-            </svg>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </section>
 
@@ -372,6 +422,54 @@
 
 @push('styles')
 <style>
+    /* Hero Slider Styles */
+    .hero-slider {
+        margin-top: 0;
+    }
+    .hero-slide {
+        position: relative;
+        overflow: hidden;
+    }
+    .hero-slider .carousel-item {
+        transition: transform 1s ease-in-out;
+    }
+    .hero-slider .carousel-control-prev,
+    .hero-slider .carousel-control-next {
+        width: 50px;
+        height: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        opacity: 0.8;
+    }
+    .hero-slider .carousel-control-prev {
+        left: 30px;
+    }
+    .hero-slider .carousel-control-next {
+        right: 30px;
+    }
+    .hero-slider .carousel-control-prev:hover,
+    .hero-slider .carousel-control-next:hover {
+        opacity: 1;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+    .hero-slider .carousel-indicators {
+        bottom: 30px;
+    }
+    .hero-slider .carousel-indicators button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        border: none;
+        margin: 0 5px;
+    }
+    .hero-slider .carousel-indicators button.active {
+        background-color: white;
+    }
+
+    /* Product Card Styles */
     .product-card {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -404,6 +502,15 @@
     }
     html {
         scroll-behavior: smooth;
+    }
+
+    /* Header Styles */
+    .navbar-nav .nav-link {
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover {
+        color: #000 !important;
     }
 </style>
 @endpush

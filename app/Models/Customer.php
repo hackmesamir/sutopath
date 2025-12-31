@@ -2,32 +2,40 @@
 
 namespace App\Models;
 
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class Admin extends Authenticatable
+class Customer extends Authenticatable
 {
+    /** @use HasFactory<\Database\Factories\CustomerFactory> */
     use HasFactory, Notifiable;
+
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'customers';
 
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var list<string>
      */
     protected $fillable = [
         'name',
         'email',
-        'password',
         'phone',
-        'avatar',
+        'password',
         'status',
     ];
 
     /**
      * The attributes that should be hidden for serialization.
      *
-     * @var array<int, string>
+     * @var list<string>
      */
     protected $hidden = [
         'password',
@@ -47,25 +55,19 @@ class Admin extends Authenticatable
         ];
     }
 
-
     /**
-     * Check if admin is active.
-     *
-     * @return bool
+     * Get the orders for the customer.
      */
-    public function isActive(): bool
+    public function orders()
     {
-        return $this->status === 'active';
+        return $this->hasMany(Order::class);
     }
 
     /**
-     * Scope a query to only include active admins.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @return \Illuminate\Database\Eloquent\Builder
+     * Get the shipping addresses for the customer.
      */
-    public function scopeActive($query)
+    public function shippingAddresses()
     {
-        return $query->where('status', 'active');
+        return $this->hasMany(Shipping::class);
     }
 }

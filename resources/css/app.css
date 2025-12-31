@@ -1,7 +1,11 @@
 /* Custom Styles for Ecomarc Punjabi Shop */
 
-body {
-    font-family: 'Inter', 'Poppins', sans-serif;
+html, body {
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif !important;
+}
+
+* {
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif !important;
 }
 
 /* Custom Scrollbar */
