@@ -50,7 +50,7 @@
                         @endauth
 
                         <!-- CART -->
-                        <a href="#" class="position-relative text-white">
+                        <a href="#" class="position-relative text-white text-decoration-none" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar" aria-controls="cartSidebar">
                             <i class="bi bi-bag fs-3"></i>
                             <span class="position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill">
                                 1
@@ -82,9 +82,9 @@
                             New Arrival
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Panjabi</a></li>
-                            <li><a class="dropdown-item" href="#">Shirt</a></li>
-                            <li><a class="dropdown-item" href="#">T-Shirt</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">Panjabi</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">Shirt</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">T-Shirt</a></li>
                         </ul>
                     </div>
 
@@ -96,9 +96,9 @@
                             Best Seller
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Top Rated</a></li>
-                            <li><a class="dropdown-item" href="#">Most Ordered</a></li>
-                            <li><a class="dropdown-item" href="#">Trending</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">Top Rated</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">Most Ordered</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">Trending</a></li>
                         </ul>
                     </div>
 
@@ -110,9 +110,9 @@
                             Eid Collection
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Premium Panjabi</a></li>
-                            <li><a class="dropdown-item" href="#">Couple Set</a></li>
-                            <li><a class="dropdown-item" href="#">Family Combo</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">Premium Panjabi</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">Couple Set</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">Family Combo</a></li>
                         </ul>
                     </div>
 
@@ -124,9 +124,9 @@
                             Hot Deals
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Under ৳999</a></li>
-                            <li><a class="dropdown-item" href="#">Flash Sale</a></li>
-                            <li><a class="dropdown-item" href="#">Combo Offer</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">Under ৳999</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">Flash Sale</a></li>
+                            <li><a class="dropdown-item p-3 px-4" href="#">Combo Offer</a></li>
                         </ul>
                     </div>
 
@@ -161,10 +161,16 @@ header a:hover {
 }
 
 .dropdown-menu {
-    border-radius: 0;
+    border-radius: 7px;
+    min-width: 230px;
 }
+
+
 
 .badge {
     font-size: 0.65rem;
 }
 </style>
+
+<!-- Shopping Cart Sidebar -->
+@include('layouts.cart-sidebar')
