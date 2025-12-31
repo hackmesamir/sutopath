@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\User\Auth\UserLoginController;
 use App\Http\Controllers\User\Auth\UserRegisterController;
 use App\Http\Controllers\User\ProfileController;
@@ -14,6 +15,11 @@ Route::get('/login', [UserLoginController::class, 'showLoginForm'])->name('login
 Route::post('/login', [UserLoginController::class, 'login'])->name('login');
 Route::get('/register', [UserRegisterController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [UserRegisterController::class, 'register'])->name('register');
+
+// Checkout Routes (Guest Checkout Allowed)
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
+Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+Route::get('/order-success', [CheckoutController::class, 'success'])->name('checkout.success');
 
 // Protected User Routes
 Route::middleware('auth')->group(function () {

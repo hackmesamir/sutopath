@@ -49,9 +49,9 @@
                 <span class="fw-bold">Subtotal:</span>
                 <span class="fw-bold fs-5">৳2345</span>
             </div>
-            <button class="btn btn-danger w-100 fw-bold py-2">
+            <a href="{{ route('checkout') }}" class="btn btn-danger w-100 fw-bold py-2 text-decoration-none">
                 Checkout
-            </button>
+            </a>
             <a href="#" class="btn btn-outline-secondary w-100 mt-2 py-2">
                 Continue Shopping
             </a>
