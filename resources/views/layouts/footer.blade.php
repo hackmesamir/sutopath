@@ -3,10 +3,10 @@
     <div class="container py-4">
         <div class="row g-4">
             <!-- Left Side Columns -->
-            <div class="col-lg-9">
+            <div class="col-lg-4">
                 <div class="row g-4">
                     <!-- About -->
-                    <div class="col-md-4">
+                    <div class="col-md-12 px-5">
                         <img src="{{ asset('images/logo.png') }}" alt="Ecomarc Punjabi" class="mb-3" style="margin:auto; max-width: auto; height:70px;">
                         <p class="text-white mb-4" style="color: #ffffff !important; font-weight: 500 !important; font-size: 1.2rem !important;">ইসলামিক আদর্শে অনুপ্রাণিত বাংলাদেশের অন্যতম বৃহৎ লাইফস্টাইল ব্র্যান্ড।</p>
                         
@@ -24,8 +24,15 @@
                         </div>
                     </div>
 
-                    <!-- Quick Links -->
-                    <div class="col-md-4">
+                  
+                </div>
+            </div>
+
+            <!-- Right Side Column - Talk to Us -->
+            <div class="col-lg-8">
+                <div class="row">
+                     <!-- Quick Links -->
+                     <div class="col-md-4">
                         <h5 class="mb-3 text-white" style="font-weight: 800 !important; text-decoration: underline !important; text-decoration-width: 2px !important; text-decoration-thickness: 2px !important; text-underline-offset: 4px !important;">Quick Links</h5>
                         <ul class="list-unstyled">
                             <li class="mb-2">
@@ -61,14 +68,11 @@
                             </li>
                         </ul>
                     </div>
-                </div>
-            </div>
 
-            <!-- Right Side Column - Talk to Us -->
-            <div class="col-lg-3">
-                <h5 class="mb-2 text-white" style="font-weight: 800 !important; text-decoration: underline !important; text-decoration-width: 2px !important; text-decoration-thickness: 2px !important; text-underline-offset: 4px !important;">Talk to Us</h5>
+                    <div class="col-md-4">
+                    <h5 class="mb-2 text-white" style="font-weight: 800 !important; text-decoration: underline !important; text-decoration-width: 2px !important; text-decoration-thickness: 2px !important; text-underline-offset: 4px !important;">Talk to Us</h5>
                 <p class="text-white mb-1" style="color: #ffffff !important; font-size: 1.1rem;">Got Question? Call Us: </p>
-                <p class="text-white mb-3" style="color: #ffffff !important; font-size: 2rem; font-weight: 900 !important;">01516526280</p>
+                <p class="text-white mb-3" style="color: #ffffff !important; font-size: 2rem; font-weight: 900 !important;">0 1518-928266</p>
                 
                 <div>
                    
@@ -89,6 +93,13 @@
                             <p class="text-white mb-0 inline-block px-3" style="width: 90% !important; color: #ffffff !important;  font-weight: 700 !important;">CheragAli. Tongi, Gazipur, Bangladesh</p>
                         </div>
                     </div>
+                    </div>
+                </div>
+
+                
+
+
+              
                 </div>
             </div>
         </div>

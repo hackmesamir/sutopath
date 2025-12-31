@@ -35,6 +35,7 @@
 <body>
     @include('layouts.header')
 
+
     <!-- Main Content -->
     <main>
         @yield('content')
